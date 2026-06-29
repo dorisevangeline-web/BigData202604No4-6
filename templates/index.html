@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>全通路 AI 優惠戰情室 2.0</title>
+    <title>省時多 2.0</title>
     <style>
         body { font-family: 'Segoe UI', Tahoma, sans-serif; background-color: #f4f7f6; color: #333; margin: 0; padding: 20px; }
         h1 { text-align: center; color: #2c3e50; }
@@ -12,7 +12,7 @@
         .ai-cart-section { max-width: 1200px; margin: 0 auto 20px auto; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 20px; border-radius: 10px; color: black; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
         .ai-cart-section h3 { margin-top: 0; font-size: 1.2rem; }
         .ai-input-group { display: flex; gap: 10px; }
-        .ai-input-group input { flex-grow: 1; padding: 10px; border: none; border-radius: 5px; font-size: 1rem; }
+        .ai-input-group input { flex-grow: 1; padding: 10px; border: none; border-radius: 5px; font-size: 1rem; color: #333; }
         .btn-magic { background-color: #f1c40f; color: #2c3e50; border: none; border-radius: 5px; padding: 10px 20px; font-weight: bold; cursor: pointer; transition: 0.3s; }
         .btn-magic:hover { background-color: #f39c12; }
         #ai-cart-result { margin-top: 15px; display: none; }
@@ -140,7 +140,9 @@
                 
                 container.insertAdjacentHTML('beforeend', `
                     <div class="card">
-                        <a href="${item.link}" target="_blank"><img src="${item.img_url}" onerror="this.src='[https://via.placeholder.com/300x200?text=Image+Not+Found](https://via.placeholder.com/300x200?text=Image+Not+Found)'"></a>
+                        <a href="${item.link}" target="_blank">
+                            <img src="${item.img_url}" onerror="this.onerror=null; this.src='https://via.placeholder.com/300x200?text=Image+Not+Found';">
+                        </a>
                         <div class="card-content">
                             <div class="tags-row"><span class="store-tag ${tagClass}">${item.store}</span><span class="category-tag">${item.category}</span></div>
                             <div class="card-title">${item.title}</div><div class="expiry-date">活動至: ${item.expiry_date}</div>
